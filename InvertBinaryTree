@@ -1,0 +1,18 @@
+public class InvertBinaryTree {
+	public TreeNode inverTree(TreeNode node) {
+		
+		if (node!=null) {
+			TreeNode t =node.left;
+			node.left=node.right;
+			node.right=t;
+			inverTree(node.left);
+			inverTree(node.right);
+			
+			return node;
+		}else {
+			return null;
+		}
+		
+	}
+
+}
